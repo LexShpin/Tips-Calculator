@@ -17,7 +17,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     var total: Float = 0.0
     var tip: Float = 0.1
-    var split: Int = 2
+    var split: Float = 2.0
     var result: Float = 0.0
     
     
@@ -47,24 +47,27 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func splitChanged(_ sender: UIStepper) {
         splitValue.text = String(format: "%.0f", sender.value)
-        print("hello")
+        split = Float(sender.value)
+        print(split)
     }
     
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         total = Float(totalTextField.text!)!
-        result = (total / Float(split)) + (total * tip)
-        print(result)
+        result = (total + (total * tip)) / split
         performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let vc = segue.destination as? ResultsViewController else {return}
         vc.result = String(format: "%.2f", result)
-        print(vc.result)
+        vc.splitDescriptionText = "Split between \(Int(split)) people with \(Int(tip * 100))% tip"
     }
     
     // end editing when return is tapped
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }
 

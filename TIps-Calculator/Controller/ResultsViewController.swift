@@ -9,15 +9,23 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    @IBOutlet var resultLabel: UILabel!
+    @IBOutlet var splitDescriptionLabel: UILabel!
+    
     var result = ""
+    var splitDescriptionText = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        resultLabel.text = result
+        splitDescriptionLabel.text = splitDescriptionText
     }
     
-
+    @IBAction func recalculatePressed(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
