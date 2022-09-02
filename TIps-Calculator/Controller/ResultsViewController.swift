@@ -8,6 +8,8 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
+    
+    var result = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

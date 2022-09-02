@@ -13,7 +13,6 @@
 		522239BB28C213ED008F084D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522239B928C213ED008F084D /* Main.storyboard */; };
 		522239BD28C213EF008F084D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 522239BC28C213EF008F084D /* Assets.xcassets */; };
 		522239C028C213EF008F084D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 522239BE28C213EF008F084D /* LaunchScreen.storyboard */; };
-		522239CB28C2144C008F084D /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522239CA28C2144C008F084D /* CalculatorBrain.swift */; };
 		522239CD28C225B7008F084D /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522239CC28C225B7008F084D /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +25,6 @@
 		522239BC28C213EF008F084D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		522239BF28C213EF008F084D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		522239C128C213EF008F084D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		522239CA28C2144C008F084D /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		522239CC28C225B7008F084D /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +60,6 @@
 			children = (
 				522239B328C213ED008F084D /* AppDelegate.swift */,
 				522239B528C213ED008F084D /* SceneDelegate.swift */,
-				522239C928C2140D008F084D /* Model */,
 				522239C728C213FB008F084D /* View */,
 				522239C828C21401008F084D /* Controller */,
 				522239BC28C213EF008F084D /* Assets.xcassets */,
@@ -87,14 +84,6 @@
 				522239CC28C225B7008F084D /* ResultsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		522239C928C2140D008F084D /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				522239CA28C2144C008F084D /* CalculatorBrain.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +159,6 @@
 			files = (
 				522239B828C213ED008F084D /* CalculatorViewController.swift in Sources */,
 				522239B428C213ED008F084D /* AppDelegate.swift in Sources */,
-				522239CB28C2144C008F084D /* CalculatorBrain.swift in Sources */,
 				522239CD28C225B7008F084D /* ResultsViewController.swift in Sources */,
 				522239B628C213ED008F084D /* SceneDelegate.swift in Sources */,
 			);

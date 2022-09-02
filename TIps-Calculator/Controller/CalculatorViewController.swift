@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalculatorViewController: UIViewController {
+class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var totalTextField: UITextField!
     @IBOutlet var zeroPercentBtn: UIButton!
@@ -15,14 +15,15 @@ class CalculatorViewController: UIViewController {
     @IBOutlet var twentyPercentBtn: UIButton!
     @IBOutlet var splitValue: UILabel!
     
-    var tip = 0.1
-    var split = 0
-    var total = 0.0
+    var total: Float = 0.0
+    var tip: Float = 0.1
+    var split: Int = 2
+    var result: Float = 0.0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tenPercentBtn.isSelected = true
+        self.totalTextField.delegate = self
     }
 
     @IBAction func tipSelected(_ sender: UIButton) {
@@ -49,6 +50,21 @@ class CalculatorViewController: UIViewController {
         print("hello")
     }
     
-
+    
+    @IBAction func calculatePressed(_ sender: UIButton) {
+        total = Float(totalTextField.text!)!
+        result = (total / Float(split)) + (total * tip)
+        print(result)
+        performSegue(withIdentifier: "goToResult", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? ResultsViewController else {return}
+        vc.result = String(format: "%.2f", result)
+        print(vc.result)
+    }
+    
+    // end editing when return is tapped
+    
 }
 
